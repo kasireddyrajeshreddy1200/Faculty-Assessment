@@ -15,6 +15,14 @@ const FacultyDashboard = () => {
           Edit My Profile
         </button>
 
+          <br /><br />
+
+         <button onClick={() => navigate('/faculty/contributions')}>
+          My Contributions
+        </button>
+
+          <br /><br />
+
         <button
           style={styles.btnSecondary}
           onClick={() => navigate('/faculty/profile/view')}

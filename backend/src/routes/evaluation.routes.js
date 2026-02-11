@@ -12,13 +12,7 @@ router.get(
   evaluationController.getPendingContributions
 );
 
-router.post(
-  '/:contributionId',
-  protect,
-  authorizeRoles('EVALUATOR'),
-  evaluationController.evaluateContribution
-);
-
+// ✅ FINAL MUST COME BEFORE :contributionId
 router.post(
   '/final',
   protect,
@@ -26,5 +20,33 @@ router.post(
   evaluationController.createFinalFacultyEvaluation
 );
 
+router.get(
+  '/faculty-list',
+  protect,
+  authorizeRoles('EVALUATOR'),
+  evaluationController.getFacultyListForFinalEvaluation
+);
+
+router.get(
+  '/faculty/:facultyId/years',
+  protect,
+  authorizeRoles('EVALUATOR'),
+  evaluationController.getFacultyContributionYears
+);
+
+router.get(
+  '/final-preview/:facultyId/:academicYear',
+  protect,
+  authorizeRoles('EVALUATOR'),
+  evaluationController.previewFinalEvaluation
+);
+
+// ❗ ALWAYS KEEP PARAM ROUTES LAST
+router.post(
+  '/:contributionId',
+  protect,
+  authorizeRoles('EVALUATOR'),
+  evaluationController.evaluateContribution
+);
 
 module.exports = router;

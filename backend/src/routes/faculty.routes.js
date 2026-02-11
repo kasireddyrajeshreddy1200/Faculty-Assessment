@@ -19,4 +19,13 @@ router.get(
   facultyController.getFacultyProfile
 );
 
+// faculty.routes.js
+router.get(
+  '/final-evaluations',
+  protect,
+  authorizeRoles('FACULTY'),
+  require('../controllers/evaluation.controller').getMyFinalEvaluations
+);
+
+
 module.exports = router;
