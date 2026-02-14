@@ -12,6 +12,9 @@ import EvaluatorDashboard from './pages/EvaluatorDashboard';
 import PendingContributions from './pages/PendingContributions';
 import EvaluateContribution from './pages/EvaluateContribution';
 import FinalEvaluation from './pages/FinalEvaluation';
+import FacultyFinalEvaluations from './pages/FacultyFinalEvaluations';
+import EvaluatorProfile from './pages/EvaluatorProfile';
+import EvaluatorProfileView from './pages/EvaluatorProfileView';
 
 
 function App() {
@@ -96,6 +99,13 @@ function App() {
         <Route path="final" element={<FinalEvaluation />} />
       </Route>
 
+<Route
+  path="/faculty/final-evaluations"
+  element={<FacultyFinalEvaluations />}
+/>
+
+<Route path="/evaluator/profile" element={<EvaluatorProfile />} />
+<Route path="/evaluator/profile/view" element={<EvaluatorProfileView />} />
 
 
       </Routes>

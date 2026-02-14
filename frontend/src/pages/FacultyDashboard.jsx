@@ -29,6 +29,14 @@ const FacultyDashboard = () => {
         >
           View My Profile
         </button>
+
+        <br /><br />
+        <button
+  style={styles.btnSecondary}
+  onClick={() => navigate('/faculty/final-evaluations')}
+>
+  View Final Evaluation Results
+</button>
       </div>
     </>
   );

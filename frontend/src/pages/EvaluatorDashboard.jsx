@@ -7,9 +7,20 @@ const EvaluatorDashboard = () => {
       <Navbar />
 
       <div style={styles.container}>
+        
         <h2>Evaluator Dashboard</h2>
-
         <div style={styles.actions}>
+        {/* Profile Section */}
+          <Link to="/evaluator/profile" style={styles.link}>
+            Edit My Profile
+          </Link>
+
+          <Link to="/evaluator/profile/view" style={styles.link}>
+            View My Profile
+          </Link>
+
+        {/* Evaluation Section */}
+        
           <Link to="pending" style={styles.link}>
             View Pending Contributions
           </Link>
