@@ -2,6 +2,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+
 exports.register = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -101,6 +102,27 @@ exports.login = async (req, res) => {
 
   } catch (error) {
     console.error('LOGIN ERROR:', error);
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
+exports.getMe = async (req, res) => {
+  try {
+    res.json(req.user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.getAllFaculty = async (req, res) => {
+  try {
+    const faculty = await User.find({ role: 'FACULTY' })
+      .select('_id name email');
+
+    res.status(200).json(faculty);
+
+  } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };

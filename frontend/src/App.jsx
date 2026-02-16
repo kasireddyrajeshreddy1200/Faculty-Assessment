@@ -15,6 +15,11 @@ import FinalEvaluation from './pages/FinalEvaluation';
 import FacultyFinalEvaluations from './pages/FacultyFinalEvaluations';
 import EvaluatorProfile from './pages/EvaluatorProfile';
 import EvaluatorProfileView from './pages/EvaluatorProfileView';
+import EditContribution from './pages/EditContribution';
+import FacultyYearReport from './pages/FacultyYearReport';
+import AdminSystemReport from './pages/AdminSystemReport';
+import AdminCategoryReport from './pages/AdminCategoryReport';
+import EvaluatorFacultyReport from './pages/EvaluatorFacultyReport';
 
 
 function App() {
@@ -106,6 +111,20 @@ function App() {
 
 <Route path="/evaluator/profile" element={<EvaluatorProfile />} />
 <Route path="/evaluator/profile/view" element={<EvaluatorProfileView />} />
+<Route
+  path="/faculty/contributions/edit/:id"
+  element={
+    <ProtectedRoute allowedRoles={['FACULTY']}>
+      <EditContribution />
+    </ProtectedRoute>
+  }
+/>
+
+<Route path="/faculty/report" element={<FacultyYearReport />} />
+<Route path="/admin/system-report" element={<AdminSystemReport />} />
+<Route path="/admin/category-report" element={<AdminCategoryReport />} />
+<Route path="/evaluator/faculty-report" element={<EvaluatorFacultyReport />} />
+
 
 
       </Routes>

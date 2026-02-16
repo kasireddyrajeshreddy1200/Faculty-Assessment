@@ -86,6 +86,29 @@ const EvaluateContribution = () => {
     navigate('/evaluator/pending');
   };
 
+  const handleDownload = async (fileIndex, fileName) => {
+  try {
+    const response = await api.get(
+      `/contributions/file/${contribution._id}/${fileIndex}`,
+      {
+        responseType: 'blob'
+      }
+    );
+
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', fileName);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+  } catch (error) {
+    alert('Failed to download file');
+  }
+};
+
+
   return (
     <div style={styles.container}>
       {/* Contribution Details */}
@@ -98,6 +121,33 @@ const EvaluateContribution = () => {
         <p><strong>Title:</strong> {contribution.title}</p>
         <p><strong>Description:</strong> {contribution.description}</p>
         <p><strong>Academic Year:</strong> {contribution.academicYear}</p>
+
+        <p><strong>Proof Files:</strong></p>
+
+{contribution.proofFiles?.length === 0 && (
+  <p>No proof files uploaded</p>
+)}
+
+{contribution.proofFiles?.map((file, index) => (
+  <div key={index} style={{ marginBottom: '8px' }}>
+    <button
+      type="button"
+      onClick={() => handleDownload(index, file.fileName)}
+      style={{
+        background: '#2563eb',
+        color: '#fff',
+        border: 'none',
+        padding: '6px 12px',
+        borderRadius: '4px',
+        cursor: 'pointer'
+      }}
+    >
+      {file.fileName}
+    </button>
+  </div>
+))}
+
+
       </div>
 
       {/* Evaluation Form */}

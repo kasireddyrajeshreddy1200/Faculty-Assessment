@@ -18,8 +18,23 @@ const AdminDashboard = () => {
         >
           Register Faculty / Evaluator
         </button>
+        <br /><br />
+        <button
+  style={styles.primaryBtn}
+  onClick={() => navigate('/admin/system-report')}
+>
+  View System Report
+</button>
 
-        
+<br /><br />
+
+<button
+  style={styles.primaryBtn}
+  onClick={() => navigate('/admin/category-report')}
+>
+  View Category Summary
+</button>
+
       </div>
     </>
   );

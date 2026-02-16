@@ -28,7 +28,14 @@ const EvaluatorDashboard = () => {
           <Link to="final" style={styles.link}>
             Create Final Evaluation
           </Link>
+
+          <Link to="faculty-report" style={styles.link}>
+  Faculty Year Report
+</Link>
+
         </div>
+
+
 
         <Outlet />
       </div>

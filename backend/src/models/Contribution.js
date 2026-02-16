@@ -13,7 +13,8 @@ const contributionSchema = new mongoose.Schema(
         'TEACHING',
         'RESEARCH',
         'ADMINISTRATION',
-        'EXTENSION'
+        'EXTENSION',
+        'OTHER'
       ],
       required: true
     },
@@ -36,7 +37,17 @@ const contributionSchema = new mongoose.Schema(
       type: String,
       enum: ['PENDING', 'APPROVED', 'REJECTED'],
       default: 'PENDING'
-    }
+    },
+   proofFiles: [
+  {
+    fileName: { type: String },
+    filePath: { type: String },
+    fileType: { type: String },
+    fileSize: { type: Number },
+    uploadedAt: { type: Date }
+  }
+]
+
   },
   { timestamps: true }
 );

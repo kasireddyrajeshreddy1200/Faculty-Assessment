@@ -11,8 +11,16 @@ API.interceptors.request.use((req) => {
 });
 
 // Create contribution
-export const createContribution = (data) =>
-  API.post('/contributions', data);
+// export const createContribution = (data) =>
+//   API.post('/contributions', data);
+
+export const createContribution = (formData) => {
+  return API.post('/contributions', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
+};
 
 // Get my contributions
 export const getMyContributions = () =>

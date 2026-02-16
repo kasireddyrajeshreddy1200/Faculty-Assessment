@@ -3,6 +3,8 @@ const router = express.Router();
 const authController = require('../controllers/auth.controller');
 const { protect } = require('../middleware/auth.middleware');
 const { authorizeRoles } = require('../middleware/role.middleware');
+const { getMe } = require('../controllers/auth.controller');
+const { getAllFaculty } = require('../controllers/auth.controller');
 
 // // sanity check (GET)
 // router.get('/test', (req, res) => {
@@ -46,5 +48,17 @@ router.post(
   authController.register
 );
 router.post('/login', authController.login);
+router.get('/me', protect, getMe);
+
+router.get(
+  '/faculty-list',
+  protect,
+  authorizeRoles('EVALUATOR', 'ADMIN'),
+  getAllFaculty
+);
+
+
+
+
 
 module.exports = router;
