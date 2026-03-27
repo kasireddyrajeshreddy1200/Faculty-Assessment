@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+
 import { getEvaluatorProfile } from '../api/evaluator.api';
 
 const EvaluatorProfileView = () => {
@@ -20,7 +20,6 @@ const EvaluatorProfileView = () => {
 
   return (
     <>
-      <Navbar />
       <div style={styles.card}>
         <h2>My Profile</h2>
 
@@ -30,10 +29,6 @@ const EvaluatorProfileView = () => {
         <p><strong>Designation:</strong> {profile.designation}</p>
         <p><strong>Joining Date:</strong> {profile.joiningDate.slice(0, 10)}</p>
         <p><strong>Qualifications:</strong> {profile.qualifications}</p>
-
-        <button style={styles.btn} onClick={() => navigate('/evaluator')}>
-          Back to Dashboard
-        </button>
       </div>
     </>
   );

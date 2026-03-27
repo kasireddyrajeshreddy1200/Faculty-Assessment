@@ -1,9 +1,11 @@
+import { jwtDecode } from 'jwt-decode';
+
 export const getUserFromToken = (token) => {
   if (!token) return null;
 
   try {
-    const payload = JSON.parse(atob(token.split('.')[1]));
-    return payload; // { id, role, iat, exp }
+    const decoded = jwtDecode(token);
+    return decoded; // { id, role, iat, exp }
   } catch {
     return null;
   }

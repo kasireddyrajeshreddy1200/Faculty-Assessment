@@ -9,7 +9,11 @@ const app = express();
 connectDB();
 
 // Middlewares
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes

@@ -38,16 +38,15 @@ const contributionSchema = new mongoose.Schema(
       enum: ['PENDING', 'APPROVED', 'REJECTED'],
       default: 'PENDING'
     },
-   proofFiles: [
-  {
-    fileName: { type: String },
-    filePath: { type: String },
-    fileType: { type: String },
-    fileSize: { type: Number },
-    uploadedAt: { type: Date }
-  }
-]
-
+    proofFiles: [
+      {
+        fileName: { type: String },
+        filePath: { type: String },
+        fileType: { type: String },
+        fileSize: { type: Number },
+        uploadedAt: { type: Date }
+      }
+    ]
   },
   { timestamps: true }
 );

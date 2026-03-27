@@ -6,41 +6,6 @@ const { authorizeRoles } = require('../middleware/role.middleware');
 const { getMe } = require('../controllers/auth.controller');
 const { getAllFaculty } = require('../controllers/auth.controller');
 
-// // sanity check (GET)
-// router.get('/test', (req, res) => {
-//   res.json({ message: 'Auth route working' });
-// });
-
-// // ⚠️ TEMP ROUTE — USE ONCE, THEN DELETE
-// router.post('/seed-admin', async (req, res) => {
-//   try {
-//     const User = require('../models/User');
-//     const bcrypt = require('bcryptjs');
-
-//     const adminExists = await User.findOne({ role: 'ADMIN' });
-//     if (adminExists) {
-//       return res.status(400).json({ message: 'Admin already exists' });
-//     }
-
-//     const admin = await User.create({
-//       name: 'System Admin',
-//       email: 'admin@test.com',
-//       password: await bcrypt.hash('admin123', 10),
-//       role: 'ADMIN'
-//     });
-
-//     res.status(201).json({
-//       message: 'Admin created successfully',
-//       admin: {
-//         email: admin.email,
-//         role: admin.role
-//       }
-//     });
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// });
-
 router.post(
   '/register',
   protect,
@@ -48,6 +13,8 @@ router.post(
   authController.register
 );
 router.post('/login', authController.login);
+router.post('/forgot-password', authController.forgotPassword);
+router.post('/reset-password', authController.resetPassword);
 router.get('/me', protect, getMe);
 
 router.get(
@@ -56,9 +23,5 @@ router.get(
   authorizeRoles('EVALUATOR', 'ADMIN'),
   getAllFaculty
 );
-
-
-
-
 
 module.exports = router;
