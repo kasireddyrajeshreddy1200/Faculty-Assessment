@@ -23,7 +23,7 @@ const Navbar = () => {
               <div className="w-12 h-12 bg-cyan-300 rounded-full flex items-center justify-center group-hover:bg-cyan-200 transition-all duration-300 shadow-lg flex-shrink-0">
                 <span className="text-blue-900 font-bold text-xl">FA</span>
               </div>
-              <h1 className="text-white font-bold text-lg hidden sm:block leading-none">
+              <h1 className="text-white font-bold text-lg hidden sm:block leading-none mb-0">
                 Faculty Assessment
               </h1>
             </div>

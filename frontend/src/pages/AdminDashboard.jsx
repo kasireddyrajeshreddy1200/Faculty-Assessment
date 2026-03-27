@@ -154,10 +154,10 @@ const AdminDashboard = () => {
               <button
                 key={index}
                 onClick={() => handleMenuCardClick(index, item.action)}
-                className={`group card p-8 min-h-56 hover:shadow-2xl transition-all duration-300 hover:scale-105 text-left overflow-hidden relative bg-gradient-to-br from-orange-300 via-orange-400 to-orange-500 flex flex-col rounded-2xl ${item.width} ${
+                className={`group card p-8 min-h-56 hover:shadow-2xl transition-all duration-300 hover:scale-105 text-left overflow-hidden relative bg-gradient-to-br from-red-400 via-red-500 to-red-600 flex flex-col rounded-2xl ${item.width} ${
                   selectedMenuCard === index 
                     ? 'border-2 border-black' 
-                    : 'border-2 border-yellow-500 hover:border-black'
+                    : 'border-2 border-rose-400 hover:border-black'
                 }`}
               >
                 {/* Icon */}
@@ -167,15 +167,15 @@ const AdminDashboard = () => {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-100 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-rose-100 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-orange-50 text-sm mb-4 leading-relaxed">
+                  <p className="text-red-50 text-sm mb-4 leading-relaxed">
                     {item.description}
                   </p>
 
                   {/* Action indicator */}
-                  <div className="flex items-center gap-2 text-yellow-200 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                  <div className="flex items-center gap-2 text-rose-200 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
                     Manage
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -184,7 +184,7 @@ const AdminDashboard = () => {
                 </div>
 
                 {/* Border glow on hover */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-yellow-300 rounded-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-rose-300 rounded-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
               </button>
             ))}
           </div>
@@ -199,10 +199,10 @@ const AdminDashboard = () => {
               <div 
                 key={idx} 
                 onClick={() => setSelectedStatCard(selectedStatCard === idx ? null : idx)}
-                className={`card flex-1 p-8 min-h-56 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br from-orange-300 to-orange-400 rounded-2xl flex flex-col justify-center items-center cursor-pointer ${
+                className={`card flex-1 p-8 min-h-56 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 bg-gradient-to-br from-red-400 to-red-500 rounded-2xl flex flex-col justify-center items-center cursor-pointer ${
                   selectedStatCard === idx 
                     ? 'border-2 border-black' 
-                    : 'border-2 border-yellow-500 hover:border-black'
+                    : 'border-2 border-rose-400 hover:border-black'
                 }`}
               >
                 <div className="text-5xl mb-4">{stat.icon}</div>
@@ -219,7 +219,7 @@ const AdminDashboard = () => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-slide-in-up">
             {/* Modal Header */}
-            <div className="bg-gradient-to-br from-orange-300 to-orange-400 p-6 rounded-t-2xl">
+            <div className="bg-gradient-to-br from-red-400 to-red-500 p-6 rounded-t-2xl">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -271,7 +271,7 @@ const AdminDashboard = () => {
                     value={formData.name}
                     onChange={handleFormChange}
                     required
-                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-orange-400 focus:ring-2 focus:ring-orange-200 transition-all text-gray-900 placeholder-gray-400 text-sm"
+                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-red-400 focus:ring-2 focus:ring-red-200 transition-all text-gray-900 placeholder-gray-400 text-sm"
                   />
                 </div>
 
@@ -284,7 +284,7 @@ const AdminDashboard = () => {
                     value={formData.email}
                     onChange={handleFormChange}
                     required
-                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-orange-400 focus:ring-2 focus:ring-orange-200 transition-all text-gray-900 placeholder-gray-400 text-sm"
+                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-red-400 focus:ring-2 focus:ring-red-200 transition-all text-gray-900 placeholder-gray-400 text-sm"
                   />
                 </div>
 
@@ -297,7 +297,7 @@ const AdminDashboard = () => {
                     value={formData.password}
                     onChange={handleFormChange}
                     required
-                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-orange-400 focus:ring-2 focus:ring-orange-200 transition-all text-gray-900 placeholder-gray-400 text-sm"
+                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-red-400 focus:ring-2 focus:ring-red-200 transition-all text-gray-900 placeholder-gray-400 text-sm"
                   />
                 </div>
 
@@ -307,7 +307,7 @@ const AdminDashboard = () => {
                     name="role"
                     value={formData.role}
                     onChange={handleFormChange}
-                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-orange-400 focus:ring-2 focus:ring-orange-200 transition-all text-gray-900 text-sm"
+                    className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-red-400 focus:ring-2 focus:ring-red-200 transition-all text-gray-900 text-sm"
                   >
                     <option value="FACULTY">Faculty Member</option>
                     <option value="EVALUATOR">Evaluator</option>
@@ -319,7 +319,7 @@ const AdminDashboard = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex-1 px-4 py-2 bg-gradient-to-br from-orange-300 to-orange-400 text-white font-semibold rounded-lg hover:from-orange-400 hover:to-orange-500 transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed text-sm flex items-center justify-center gap-2"
+                    className="flex-1 px-4 py-2 bg-gradient-to-br from-red-400 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed text-sm flex items-center justify-center gap-2"
                   >
                     {loading ? (
                       <>
@@ -357,7 +357,7 @@ const AdminDashboard = () => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto animate-slide-in-up">
             {/* Modal Header */}
-            <div className="sticky top-0 bg-gradient-to-br from-orange-300 to-orange-400 p-6 rounded-t-2xl flex items-center justify-between">
+            <div className="sticky top-0 bg-gradient-to-br from-red-400 to-red-500 p-6 rounded-t-2xl flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
@@ -379,7 +379,7 @@ const AdminDashboard = () => {
               {systemReportLoading ? (
                 <div className="flex justify-center items-center py-12">
                   <div className="text-center">
-                    <svg className="animate-spin h-12 w-12 text-orange-400 mx-auto" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-12 w-12 text-red-500 mx-auto" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -398,10 +398,10 @@ const AdminDashboard = () => {
                     </thead>
                     <tbody>
                       {systemReportData.map((item, idx) => (
-                        <tr key={idx} className="border-b border-gray-200 hover:bg-orange-50 transition-colors">
+                        <tr key={idx} className="border-b border-gray-200 hover:bg-red-50 transition-colors">
                           <td className="px-4 py-3 text-gray-900 font-medium">{item._id}</td>
                           <td className="px-4 py-3 text-gray-700">{item.totalContributions}</td>
-                          <td className="px-4 py-3 text-orange-600 font-semibold">{item.totalScore.toFixed(2)}</td>
+                          <td className="px-4 py-3 text-red-600 font-semibold">{item.totalScore.toFixed(2)}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -435,7 +435,7 @@ const AdminDashboard = () => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fade-in">
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[80vh] overflow-y-auto animate-slide-in-up">
             {/* Modal Header */}
-            <div className="sticky top-0 bg-gradient-to-br from-orange-300 to-orange-400 p-6 rounded-t-2xl flex items-center justify-between">
+            <div className="sticky top-0 bg-gradient-to-br from-red-400 to-red-500 p-6 rounded-t-2xl flex items-center justify-between">
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
@@ -463,12 +463,12 @@ const AdminDashboard = () => {
                     placeholder="Enter year (e.g., 2024-25)"
                     value={categoryYear}
                     onChange={(e) => setCategoryYear(e.target.value)}
-                    className="flex-1 px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-orange-400 focus:ring-2 focus:ring-orange-200 transition-all text-gray-900 placeholder-gray-400"
+                    className="flex-1 px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-red-400 focus:ring-2 focus:ring-red-200 transition-all text-gray-900 placeholder-gray-400"
                   />
                   <button
                     onClick={handleFetchCategoryReport}
                     disabled={categoryReportLoading}
-                    className="px-6 py-2 bg-gradient-to-br from-orange-300 to-orange-400 text-white font-semibold rounded-lg hover:from-orange-400 hover:to-orange-500 transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2 whitespace-nowrap"
+                    className="px-6 py-2 bg-gradient-to-br from-red-400 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2 whitespace-nowrap"
                   >
                     {categoryReportLoading ? (
                       <>
@@ -523,10 +523,10 @@ const AdminDashboard = () => {
                     </thead>
                     <tbody>
                       {categoryReportData.map((item, idx) => (
-                        <tr key={idx} className="border-b border-gray-200 hover:bg-orange-50 transition-colors">
+                        <tr key={idx} className="border-b border-gray-200 hover:bg-red-50 transition-colors">
                           <td className="px-4 py-3 text-gray-900 font-medium">{item._id}</td>
                           <td className="px-4 py-3 text-gray-700">{item.count}</td>
-                          <td className="px-4 py-3 text-orange-600 font-semibold">{item.totalScore.toFixed(2)}</td>
+                          <td className="px-4 py-3 text-red-600 font-semibold">{item.totalScore.toFixed(2)}</td>
                         </tr>
                       ))}
                     </tbody>
